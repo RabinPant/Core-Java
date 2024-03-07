@@ -72,5 +72,16 @@ LinkedList<Integer> l1 = new LinkedList<>();
             System.out.println("Linked" + a);
         }
 ALthough in the core structure there are many difference
+
+LinkedHashMap<Integer,String> lhm = new LinkedHashMap<>(5,0.75f,true);
+When we use this then most recently access data will come at the bottom and lest access will go top.
+if you want to implement CACHE where after 5 data least acess data is removed then.
+
+LinkedHashMap<Integer,String> lhm = new LinkedHashMap<>(5,0.75f,true){
+            @Override
+            protected boolean removeEldestEntry(Map.Entry eldest) {
+                return size()>5;
+            }
+        }
 ```
 
