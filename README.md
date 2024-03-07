@@ -62,5 +62,15 @@ Iterator<Integer> it = al1.iterator();
         while(it.hasNext()){
             System.out.println(it.next());
         }
+
+Linked list and Array list in code there is one difference:
+LinkedList<Integer> l1 = new LinkedList<>();
+        l1.addFirst(1);
+        l1.addLast(2);
+        l1.peek() =>  to ge the element
+        for(Integer a:l1){
+            System.out.println("Linked" + a);
+        }
+ALthough in the core structure there are many difference
 ```
 
