@@ -84,4 +84,18 @@ LinkedHashMap<Integer,String> lhm = new LinkedHashMap<>(5,0.75f,true){
             }
         }
 ```
+### Interview Questions
+```
+ArrayList<Emp> emps = new ArrayList<>();
+        emps.add(new Emp("rabin","5802359696",12));
+        emps.add(new Emp("abin","5802359696",22));
+        emps.add(new Emp("sabin","5802359696",1));
+        emps.add(new Emp("pabin","5802359696",18));
 
+//        I have two choice fist one is using comparable and second is comparator.
+//        comparable can be use in only one logic whereas comparator can be use in multiple
+        Collections.sort(emps);
+        System.out.println(emps);
+        Collections.sort(emps,new Sort());
+        System.out.println(emps);
+```
