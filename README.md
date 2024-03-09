@@ -98,4 +98,90 @@ ArrayList<Emp> emps = new ArrayList<>();
         System.out.println(emps);
         Collections.sort(emps,new Sort());
         System.out.println(emps);
+
+
+..................................................
+1) What collections you used in project?
+I used List, Set and map. Under it I have used ArrayList, linkedList, HashSet, LinkedHashSet, and TreeSet. In map I have used HashMap,LinkedHashMap, and TreeMap.
+
+Under Java.util.concurrent.* I have used copyOnWriteArrayList, CopyOnWriteArraySet and ConcurrentHashMap.
+
+2) Difference between, List -> set , ArrayList, LinkedList
+Declaring List as a final :
+final List<String> a = new ArrayList<>();
+        a.add("ra");
+
+3) we can declare list as final and add data but can't reassign a = new ArrayList<>();
+
+4) How can I write custom ArrayList where duplicate is not allowed?
+public class CustomArrayList extends ArrayList {
+
+    @Override
+    public boolean add(Object o){
+        if(this.contains(o)){
+            return true;
+        }else{
+            return super.add(o);
+        }
+    }
+    public static void main(String[] args) {
+        CustomArrayList list = new CustomArrayList();
+        list.add(1);
+        list.add(1);
+        list.add(1);
+        list.add(2);
+        System.out.println(list);
+    }
+
+5) why set doesn't allow unique element?
+Set<String> s = new HashSet<>();
+s.add(1);
+
+//Internal implementatio of SET add method
+public boolean add(E e) {
+        return map.put(e, PRESENT)==null;
+    }
+
+Its because internally set make use of map and whatever value we pass through add method of set it's put in that map as key and the value is PRESENT which is actally a dummy value.
+
+6) In what scenario does the set method allows the duplicate and how can we prevent it?
+Whenever we're using a custom object or any wrapper class then at that time the set allows the duplicate to prevent this scenario we have to make use of the equals() and HashCode() method in the custom class.
+
+ @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Emp emp = (Emp) o;
+        return empId == emp.empId && Objects.equals(name, emp.name) && Objects.equals(phone, emp.phone);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, phone, empId);
+    }
+
+7) Difference between Comparable and Comparator
+
+9) Difference between fail fast and fail safe iterator
+
+ A iterator which will fail fast when we do any modification while iterating a collection is called fail fast iterator. (AraryList, HashMap and vector)
+This is the error we get if we use this:
+ List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+
+        Iterator<String> iterator = list.iterator();
+        while(iterator.hasNext()){
+            String next = iterator.next();
+            System.out.println(next);
+            list.add("2");
+Exception in thread "main" java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:909)
+	at java.util.ArrayList$Itr.next(ArrayList.java:859)
+	at practise.main(practise.java:15)
+
+Iterator who allows us to modify in middle while iterating a collection is called Non-Fail fast iterator. ex (copyOnWriteArrayList,CopyOnWriteArraySet, ConcurrentHashMap)
+
+
+
 ```
