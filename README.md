@@ -182,6 +182,29 @@ Exception in thread "main" java.util.ConcurrentModificationException
 
 Iterator who allows us to modify in middle while iterating a collection is called Non-Fail fast iterator. ex (copyOnWriteArrayList,CopyOnWriteArraySet, ConcurrentHashMap)
 
+10) What is the need of ConcurrentHashMap and how it is different from HashMap?
+
+HashMap				ConcurrentHashMap
+non-synchronized		synchronized
+not thread-safe			thread-safe
+fail-fast and throws		fail-safe and performs iteration by multiple threads
+exception		
+faster
+you can put null value			slower than hashmap/can't put null value
+
+
+** HashMap applies lock on the entire map object whereas the concurrentHashMap will applies lock only on segment level.
+
+*** If we have HashTable which is already synchronized then why we need ConcurrentHashMap?
+Locking mechanism still same as per HashMap(lock whole underlying DS)
+
+**** we can synchronize a hashmap using collections then why can't we use that instead using concurrentHashMap?
+if we use Collectios.synchronizedMap(map) it will act as synchrnized hashtable where again locking mechanism is different.
+
+
+How hashMap works internally:
+Why HashMap keys are immutable?
+
 
 
 ```
