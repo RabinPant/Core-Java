@@ -201,6 +201,13 @@ Locking mechanism still same as per HashMap(lock whole underlying DS)
 **** we can synchronize a hashmap using collections then why can't we use that instead using concurrentHashMap?
 if we use Collectios.synchronizedMap(map) it will act as synchrnized hashtable where again locking mechanism is different.
 
+How can we achieve thread safety?
+By adding Synchronization keyword
+volatile
+atomic variable
+final keyword
+
+
 
 How hashMap works internally:
 Why HashMap keys are immutable?
