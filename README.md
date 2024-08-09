@@ -214,4 +214,8 @@ Why HashMap keys are immutable?
 
 
 
+= Garbage collection in java automatically frees memeory by removing objects that are no longer used. It frees the memory by unused objects, making space for new objects.
+
+=> The finalize() method is called by garbage collector on an object when it determines that there are no more refrences to the object. It's meant to give the object a chance to clean up resources before its collected.
+=> JVM uses multiple garbage collection 
 ```
