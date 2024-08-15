@@ -925,4 +925,5 @@ Mutithreading 1 => https://notebook.zohopublic.in/public/notes/74tdo52a4834de555
 Multithreading 2 => https://notebook.zohopublic.in/public/notes/74tdo47dcfcf05e644cf192c411a6d78ec1dc
 Thread Poll => https://notebook.zohopublic.in/public/notes/74tdo0e297bb7d6dd4d45a837d13f60fedc3f
 Thread Poll Executor => https://notebook.zohopublic.in/public/notes/74tdo0e297bb7d6dd4d45a837d13f60fedc3f
+Future, CompletableFuture and Callable : https://notebook.zohopublic.in/public/notes/74tdo4a0bd722efc748d0909fbb498fa21b18
 ```
